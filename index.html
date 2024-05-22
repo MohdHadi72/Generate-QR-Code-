@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h4>Enter  Your Text or URL</h4>
+    <input type="text" placeholder="Enter Text or URL" id="inputBox">
+    <div id="imag">
+      <img src="" id="qrimag">
+    </div>
+    <button onclick="generate()">Generate QR Code</button>
+
+  </div>
+  
+
+  <script>
+
+let imgBox = document.getElementById('imag');
+let qrimag = document.getElementById('qrimag');
+let inputBox = document.getElementById('inputBox');
+
+
+    function generate(){
+      if(inputBox.value.length > 0){
+      qrimag.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${inputBox.value}`;
+      imag.classList.add("show-img");
+      }
+      else{
+        alert("Please Enter A Input Value");
+      }
+      
+    }
+
+
+
+
+  </script>
+</body>
+</html>
